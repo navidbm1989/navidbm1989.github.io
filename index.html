@@ -1,23 +1,12 @@
-<iframe id="myIframe" src="https://script.google.com/macros/s/AKfycbx8lQS_1rikGYYkHThOAsDHj03XHH-xd6lofb3PTl3FmsyiUOCJlsuD2R6JA6cHbUkk/exec" width="100%" frameborder="0" scrolling="no"></iframe>
+<iframe 
+id="webappIframe" 
+src="https://script.google.com/macros/s/AKfycbx8lQS_1rikGYYkHThOAsDHj03XHH-xd6lofb3PTl3FmsyiUOCJlsuD2R6JA6cHbUkk/exec" 
+frameborder="0" 
+scrolling="no" 
+style="width: 100%; border: none; min-height: 100vh;" 
+></iframe>
 
-<script>
-function resizeIframe(iframe) {
-    iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-}
 
-function setupIframe() {
-    const iframe = document.getElementById('myIframe');
-    
-    // Initial resize
-    resizeIframe(iframe);
-    
-    // Add event listener for content changes
-    iframe.contentWindow.addEventListener('resize', () => {
-        resizeIframe(iframe);
-    });
-}
 
-// Wait for iframe to load
-document.getElementById('myIframe').onload = setupIframe;
-</script>
+
 
