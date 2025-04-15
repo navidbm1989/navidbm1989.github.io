@@ -3,61 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Footer Responsive iFrame</title>
+    <title>Sacred Needles Consent Form</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/LOGO.png">
     <!-- Font Awesome CDN for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
-            margin: 0; /* Remove default body margin */
+            margin: 0;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensure body takes full viewport height */
+            min-height: 100vh;
         }
         iframe {
             width: 100%;
-            height: 80vh; /* 80% of viewport height */
+            height: 80vh; /* Adjusted to 80vh for better footer visibility */
             border: none;
-            flex: 1; /* Make iframe take remaining space */
+            flex: 1;
         }
         footer {
-            background-color: #f8f8f8;
+            background-color: #2c2c2c; /* Dark background */
+            color: #fff; /* White text */
             padding: 20px;
             text-align: center;
-            border-top: 1px solid #ddd;
+            border-top: 2px solid #444; /* Subtle border */
         }
         .social-icons a {
-            margin: 0 10px;
+            margin: 0 15px;
             text-decoration: none;
-            color: #333;
-            font-size: 24px; /* Icon size */
             display: inline-flex;
             align-items: center;
-            gap: 5px; /* Space between icon and handle */
+            gap: 8px; /* Space between icon and handle */
+            transition: transform 0.3s ease; /* Smooth hover effect */
         }
         .social-icons a:hover {
-            color: #007bff; /* Hover effect */
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+        /* Colored icons */
+        .social-icons .fa-facebook {
+            color: #3b5998; /* Facebook blue */
+        }
+        .social-icons .fa-instagram {
+            color: #E1306C; /* Instagram pink */
         }
         .social-icons span {
-            font-size: 16px; /* Handle text size */
+            font-size: 16px;
             font-family: Arial, sans-serif;
+            color: #fff; /* White handles */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .social-icons a {
+                margin: 0 10px;
+                font-size: 20px; /* Smaller icons on mobile */
+            }
+            .social-icons span {
+                font-size: 14px; /* Smaller text on mobile */
+            }
         }
     </style>
 </head>
 <body>
-    <iframe src="https://script.google.com/macros/s/AKfycbwnCELrZkgqKLC2wziVuLTH_nBX-ZRj8ehF5mPXm8zR4_tz1L3WkhLo39gHjKLKit-2/exec" title="Responsive iFrame"></iframe>
+    <iframe src="https://script.google.com/macros/s/AKfycbwnCELrZkgqKLC2wziVuLTH_nBX-ZRj8ehF5mPXm8zR4_tz1L3WkhLo39gHjKLKit-2/exec" title="Sacred Needles Consent Form"></iframe>
     <footer>
         <div class="social-icons">
-            <!-- Replace with your actual social media links and handles -->
             <a href="https://facebook.com/sacred.needlesfb" target="_blank" rel="noopener">
                 <i class="fab fa-facebook"></i>
-                <span>yourpage</span>
+                <span>sacred.needlesfb</span>
             </a>
             <a href="https://instagram.com/sacred.needles" target="_blank" rel="noopener">
                 <i class="fab fa-instagram"></i>
-                <span>yourprofile</span>
+                <span>sacred.needles</span>
             </a>
         </div>
     </footer>
 </body>
 </html>
-
