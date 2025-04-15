@@ -8,6 +8,7 @@
         iframe {
             width: 100%;
             border: none;
+            height: 100vh;
         }
     </style>
 </head>
@@ -22,7 +23,7 @@
                 iframe.style.height = contentHeight + 'px';
             } catch (e) {
                 console.log('Cross-origin restriction:', e);
-                iframe.style.height = '80vh'; // Fallback height
+                iframe.style.height = '100vh'; // Fallback height
             }
         };
     </script>
