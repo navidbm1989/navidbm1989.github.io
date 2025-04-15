@@ -3,16 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive iFrame</title>
+    <title> Footer Responsive iFrame</title>
+    <!-- Font Awesome CDN for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        body {
+            margin: 0; /* Remove default body margin */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
         iframe {
             width: 100%;
-            height: 90vh; /* 80% of viewport height, adjust as needed */
+            height: 80vh; /* 80% of viewport height */
             border: none;
+            flex: 1; /* Make iframe take remaining space */
+        }
+        footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 24px; /* Icon size */
+            display: inline-flex;
+            align-items: center;
+            gap: 5px; /* Space between icon and handle */
+        }
+        .social-icons a:hover {
+            color: #007bff; /* Hover effect */
+        }
+        .social-icons span {
+            font-size: 16px; /* Handle text size */
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
 <body>
     <iframe src="https://script.google.com/macros/s/AKfycbwnCELrZkgqKLC2wziVuLTH_nBX-ZRj8ehF5mPXm8zR4_tz1L3WkhLo39gHjKLKit-2/exec" title="Responsive iFrame"></iframe>
+    <footer>
+        <div class="social-icons">
+            <!-- Replace with your actual social media links and handles -->
+            <a href="https://facebook.com/sacred.needlesfb" target="_blank" rel="noopener">
+                <i class="fab fa-facebook"></i>
+                <span>yourpage</span>
+            </a>
+            <a href="https://instagram.com/sacred.needles" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+                <span>yourprofile</span>
+            </a>
+        </div>
+    </footer>
 </body>
 </html>
+
