@@ -18,6 +18,7 @@
         iframe.onload = function() {
             try {
                 const contentHeight = iframe.contentWindow.document.body.scrollHeight;
+                console.log('Ifraem height is:', contentHeight);
                 iframe.style.height = contentHeight + 'px';
             } catch (e) {
                 console.log('Cross-origin restriction:', e);
