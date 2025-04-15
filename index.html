@@ -9,16 +9,9 @@ onload="resizeIframe(this)"
 
 <script>
 function resizeIframe(iframe) {
+     console.log('Height is:', iframe.contentWindow.document.body.scrollHeight + 'px');
     iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
 }
-
-// Optional: Periodically check if the height needs to be updated (in case content changes dynamically)
-setInterval(() => {
-    const iframe = document.getElementById('webappIframe');
-    if (iframe) {
-        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    }
-}, 500);
 </script>
 
 
