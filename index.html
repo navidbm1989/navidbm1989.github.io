@@ -3,49 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Sacred Needles Tattoo Studio</title>
+    <title>Sacred Needles Consent Form</title>
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/LOGO.png">
+    <!-- Font Awesome CDN for social media icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100svh; /* Use small viewport height for mobile */
+            font-family: Arial, sans-serif;
+        }
+        iframe {
+            width: 100%;
+            flex: 1 1 auto; /* Grow and shrink as needed */
+            border: none;
+            min-height: 300px; /* Minimum height for content */
+        }
+        footer {
+            background-color: #2c2c2c;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #444;
+            flex-shrink: 0; /* Prevent footer from being squashed */
+            /* Support safe area for iOS devices */
+            padding-bottom: calc(20px + env(safe-area-inset-bottom));
+        }
+        .social-icons a {
+            margin: 0 15px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        .social-icons .fa-facebook {
+            color: #3b5998;
+        }
+        .social-icons .fa-instagram {
+            color: #E1306C;
+        }
+        .social-icons span {
+            font-size: 16px;
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            footer {
+                padding: 15px;
+                padding-bottom: calc(15px + env(safe-area-inset-bottom));
+            }
+            .social-icons a {
+                margin: 0 10px;
+                font-size: 20px;
+            }
+            .social-icons span {
+                font-size: 14px;
+            }
+        }
+        /* Ensure footer stays visible on short screens */
+        @media (max-height: 600px) {
+            body {
+                min-height: auto; /* Allow body to shrink */
+            }
+            iframe {
+                max-height: calc(100svh - 80px); /* Reserve space for footer */
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="nav-logo">Sacred Needles</div>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="consent.html">Consent Form</a>
-                <a href="book.html">Book Appointment</a>
-            </div>
-        </div>
-    </nav>
-    <header>
-        <div class="hero-content">
-            <h1>Sacred Needles</h1>
-            <p>Transform your vision into art with our expert tattoo artists.</p>
-            <a href="book.html" class="cta-button">Book Your Appointment</a>
-        </div>
-    </header>
-    <section class="about">
-        <h2>About Sacred Needles</h2>
-        <p>At Sacred Needles, we believe tattoos are more than ink—they’re stories, memories, and expressions of who you are. Our skilled artists specialize in custom designs, from intricate linework to vibrant color pieces. Located in the heart of the city, our studio offers a welcoming, sterile environment to bring your ideas to life. Book an appointment or fill out our consent form to start your journey with us!</p>
-    </section>
+    <iframe src="https://script.google.com/macros/s/AKfycbz6jQ0M6-mHA47kTUxcnmCz0sTi1rZTTu625guAbzCqaGz6xH4JBlOevh-fHC0OlxE5/exec" title="Sacred Needles Consent Form"></iframe>
     <footer>
-        <div class="footer-content">
-            <p>Sacred Needles Tattoo Studio</p>
-            <p>123 Ink Street, Art District, Cityville, ST 12345</p>
-            <div class="social-icons">
-                <a href="https://facebook.com/sacred.needlesfb" target="_blank" rel="noopener">
-                    <i class="fab fa-facebook"></i>
-                    <span>sacred.needlesfb</span>
-                </a>
-                <a href="https://instagram.com/sacred.needles" target="_blank" rel="noopener">
-                    <i class="fab fa-instagram"></i>
-                    <span>sacred.needles</span>
-                </a>
-            </div>
-            <p class="copyright">© 2025 Sacred Needles Tattoo Studio. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://facebook.com/sacred.needlesfb" target="_blank" rel="noopener">
+                <i class="fab fa-facebook"></i>
+                <span>sacred.needlesfb</span>
+            </a>
+            <a href="https://instagram.com/sacred.needles" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+                <span>sacred.needles</span>
+            </a>
         </div>
     </footer>
+    <script>
+        // Dynamically adjust iframe height to ensure footer visibility
+        function adjustIframeHeight() {
+            const footer = document.querySelector('footer');
+            const iframe = document.querySelector('iframe');
+            const footerHeight = footer.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const maxIframeHeight = viewportHeight - footerHeight;
+            iframe.style.maxHeight = `${maxIframeHeight}px`;
+        }
+
+        // Run on load and resize
+        window.addEventListener('load', adjustIframeHeight);
+        window.addEventListener('resize', adjustIframeHeight);
+    </script>
 </body>
 </html>
