@@ -18,14 +18,14 @@
         body {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 100svh; /* Use small viewport height for mobile */
             font-family: Arial, sans-serif;
         }
         iframe {
             width: 100%;
-            flex: 1; /* Grow to fill available space */
+            flex: 1 1 auto; /* Grow and shrink as needed */
             border: none;
-            min-height: 0; /* Prevent flex overflow */
+            min-height: 300px; /* Minimum height for content */
         }
         footer {
             background-color: #2c2c2c;
@@ -34,6 +34,8 @@
             text-align: center;
             border-top: 2px solid #444;
             flex-shrink: 0; /* Prevent footer from being squashed */
+            /* Support safe area for iOS devices */
+            padding-bottom: calc(20px + env(safe-area-inset-bottom));
         }
         .social-icons a {
             margin: 0 15px;
@@ -57,11 +59,9 @@
             color: #fff;
         }
         @media (max-width: 600px) {
-            iframe {
-                min-height: 300px; /* Ensure iframe has minimum height */
-            }
             footer {
                 padding: 15px;
+                padding-bottom: calc(15px + env(safe-area-inset-bottom));
             }
             .social-icons a {
                 margin: 0 10px;
@@ -71,16 +71,18 @@
                 font-size: 14px;
             }
         }
-        /* Fix for mobile viewport height */
+        /* Ensure footer stays visible on short screens */
         @media (max-height: 600px) {
+            body {
+                min-height: auto; /* Allow body to shrink */
+            }
             iframe {
-                max-height: calc(100vh - 100px); /* Reserve space for footer */
+                max-height: calc(100svh - 80px); /* Reserve space for footer */
             }
         }
     </style>
 </head>
 <body>
-    <!-- Update src to Netlify app once subdomain is set -->
     <iframe src="https://script.google.com/macros/s/AKfycbxoX_vwnHobHNBtc2Mm6trcRr1-f3XzGqxcJJQx0olcpGlYJ9xYaLc54WK-Z9qckk7K/exec" title="Sacred Needles Consent Form"></iframe>
     <footer>
         <div class="social-icons">
@@ -94,5 +96,20 @@
             </a>
         </div>
     </footer>
+    <script>
+        // Dynamically adjust iframe height to ensure footer visibility
+        function adjustIframeHeight() {
+            const footer = document.querySelector('footer');
+            const iframe = document.querySelector('iframe');
+            const footerHeight = footer.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            const maxIframeHeight = viewportHeight - footerHeight;
+            iframe.style.maxHeight = `${maxIframeHeight}px`;
+        }
+
+        // Run on load and resize
+        window.addEventListener('load', adjustIframeHeight);
+        window.addEventListener('resize', adjustIframeHeight);
+    </script>
 </body>
 </html>
